@@ -1,6 +1,3 @@
-capabilities: [{
-    browserName: 'chrome'
-}],
 
 const { expect, browser, $ } = require('@wdio/globals')
 
