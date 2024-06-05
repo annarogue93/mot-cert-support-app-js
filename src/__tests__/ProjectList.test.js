@@ -1,5 +1,11 @@
 
-/* create the following mock using the nock library that will return a list of projects for the component to render  */
+import ProjectList from '../components/ProjectList';
+import { MemoryRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import nock from 'nock';
+
+
 nock('http://localhost')
    .persist()
    .get('/v1/project')
@@ -14,11 +20,14 @@ nock('http://localhost')
    }]);
 
 
-
-describe('ProjectList', () => {
-
+   describe('ProjectList', () => {
     it('renders the list of projects correctly', async () => {
+        const {asFragment, findByText} = render(<MemoryRouter>
+            <ProjectList />
+        </MemoryRouter>);
  
+        await findByText('Project 1');
+ 
+        expect(asFragment()).toMatchSnapshot();
     });
- 
  });
