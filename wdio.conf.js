@@ -21,7 +21,11 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
+<<<<<<< Updated upstream
         './test/specs/**/*.js'
+=======
+        // ToDo: define location for spec files here
+>>>>>>> Stashed changes
     ],
     // Patterns to exclude.
     exclude: [
@@ -50,11 +54,17 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
+<<<<<<< Updated upstream
         browserName: 'chrome',
         'goog:chromeOptions': {
             args: ['headless', 'disable-gpu']
         }
     }],
+=======
+        browserName: 'chrome'
+    }],
+
+>>>>>>> Stashed changes
     //
     // ===================
     // Test Configurations
